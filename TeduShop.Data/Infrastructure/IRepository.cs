@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TeduShop.Data.Infrastructure
 {
-   public interface IRepository<T> where T : class
+   public interface RepositoryBase<T> where T : class
     {
         void Add(T entity);
         void Update(T entity);

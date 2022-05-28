@@ -6,7 +6,7 @@ using TeduShop.Model.Absttract;
 
 namespace TeduShop.Model.Models
 {
-    [Table("ProductCategorys")]
+    [Table("ProductCategories")]
     public class ProductCategory : IAuditable, ISeoable, ISwitchable
     {
         [Key]
