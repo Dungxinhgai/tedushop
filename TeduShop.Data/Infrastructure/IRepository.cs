@@ -9,10 +9,10 @@ namespace TeduShop.Data.Infrastructure
 {
    public interface IRepository<T> where T : class
     {
-        void Add(T entity);
+        T Add(T entity);
         void Update(T entity);
-        void Delete(T entity);
-        void Delete(int id);
+        T Delete(T entity);
+        T Delete(int id);
         void DeleteMulti(Expression<Func<T, bool>> where);
         T GetSingleById(int id);
         T GetSingleCondition(Expression<Func<T, bool>> expression, string[] includes=null);

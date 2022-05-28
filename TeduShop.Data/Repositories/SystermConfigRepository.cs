@@ -61,6 +61,21 @@ namespace TeduShop.Data.Repositories
             throw new NotImplementedException();
         }
 
+        SupportOnline IRepository<SupportOnline>.Add(SupportOnline entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        SupportOnline IRepository<SupportOnline>.Delete(SupportOnline entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        SupportOnline IRepository<SupportOnline>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         IQueryable<SupportOnline> IRepository<SupportOnline>.GetAll(string[] includes)
         {
             throw new NotImplementedException();
