@@ -1,9 +1,11 @@
-﻿using TeduShop.Data.Infrastructure;
+﻿using System;
+using System.Linq.Expressions;
+using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface IMenuRepository
+    public interface IMenuRepository : IRepository<Menu>
     {
     }
 
@@ -11,6 +13,11 @@ namespace TeduShop.Data.Repositories
     {
         public MenuRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+        }
+
+        public Menu GetSingleCondition(Expression<Func<Menu, bool>> expression, string[] includes = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }

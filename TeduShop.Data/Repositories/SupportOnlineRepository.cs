@@ -1,9 +1,11 @@
-﻿using TeduShop.Data.Infrastructure;
+﻿using System;
+using System.Linq.Expressions;
+using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {
     }
 
@@ -11,6 +13,11 @@ namespace TeduShop.Data.Repositories
     {
         public SupportOnlineRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+        }
+
+        public SupportOnline GetSingleCondition(Expression<Func<SupportOnline, bool>> expression, string[] includes = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }

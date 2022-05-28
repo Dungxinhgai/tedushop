@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TeduShop.Model.Absttract;
@@ -23,8 +24,7 @@ namespace TeduShop.Model.Models
 
         public int? CategoryID { get; set; }
 
-        [ForeignKey("CategoryID")]
-        public virtual PostCategory PostCategory { get; set; }
+
 
         [MaxLength(500)]
         public string Image { get; set; }
@@ -54,5 +54,8 @@ namespace TeduShop.Model.Models
         public bool HomeFlag { get; set; }
         public bool HostFlag { get; set; }
         public int ViewCount { get; set; }
+        [ForeignKey("CategoryID")]
+        public virtual PostCategory PostCategory { get; set; }
+        public virtual IEnumerable<PostTag> PostTags { get; set; }
     }
 }

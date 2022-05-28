@@ -1,9 +1,11 @@
-﻿using TeduShop.Data.Infrastructure;
+﻿using System;
+using System.Linq.Expressions;
+using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface IOrderRepository
+    public interface IOrderRepository: IRepository<Order>
     {
     }
 
@@ -11,6 +13,11 @@ namespace TeduShop.Data.Repositories
     {
         public OrderRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+        }
+
+        public Order GetSingleCondition(Expression<Func<Order, bool>> expression, string[] includes = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }
