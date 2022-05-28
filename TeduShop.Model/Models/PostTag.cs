@@ -8,14 +8,14 @@ namespace TeduShop.Model.Models
     {
         [Key]
         [Column(Order = 1)]
-        public int ProductID { get; set; }
+        public int PostID { get; set; }
 
         [Key]
         [Column(TypeName ="varchar", Order=2)]
         [MaxLength(50)]
         public string TagID { get; set; }
 
-        [ForeignKey("ProductID")]
+        [ForeignKey("PostID")]
         public virtual Product Product { get; set; }
 
         [ForeignKey("TagID")]
