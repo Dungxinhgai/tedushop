@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TeduShop.Model.Models
 {
@@ -14,15 +9,25 @@ namespace TeduShop.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
         [Required]
+        [MaxLength(250)]
         public string Name { get; set; }
+
+        [MaxLength(500)]
         public string URL { get; set; }
+
         public int? DisplayOrder { get; set; }
+
         [Required]
         public int GroupID { get; set; }
+
         [ForeignKey("GroupID")]// khoa ngoai toi bang MenuGroup
         public virtual MenuGroup MenuGroup { get; set; }
+
+        [MaxLength(10)]
         public string Target { get; set; }
+
         [Required]
         public bool Status { get; set; }
     }

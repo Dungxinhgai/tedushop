@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TeduShop.Model.Models
 {
@@ -13,12 +8,17 @@ namespace TeduShop.Model.Models
     {
         [Key]
         public int OrderID { get; set; }
+
         [Key]
         public int ProductID { get; set; }
+
         [Required]
+        [MaxLength(10)]
         public string Quatity { get; set; }
+
         [ForeignKey("OrderID")]
         public virtual Order Order { get; set; }
+
         [ForeignKey("ProductID")]
         public virtual ProductCategory ProductCategory { get; set; }
     }
